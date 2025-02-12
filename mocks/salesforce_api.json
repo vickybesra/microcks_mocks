@@ -1,0 +1,738 @@
+{
+    "variables": [
+      {
+        "key": "api_key",
+        "value": "{api_key}",
+        "type": "string"
+      }
+    ],
+    "info": {
+      "name": "Salesforce Platform APIs",
+      "_postman_id": "67cb9baa-e0da-4986-957e-88d8734647e2",
+      "description": "version=2.1 - Simplified Salesforce APIs for platform integration",
+      "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Auth",
+        "description": "Authentication Endpoints",
+        "item": [
+          {
+            "name": "Registration - Initialize",
+            "request": {
+              "url": {
+                "raw": "https://login.salesforce.com/services/auth/headless/init/registration?api_key=value",
+                "protocol": "https",
+                "host": [
+                  "login",
+                  "salesforce",
+                  "com"
+                ],
+                "port": "",
+                "path": [
+                  "services",
+                  "auth",
+                  "headless",
+                  "init",
+                  "registration"
+                ],
+                "query": [
+                  {
+                    "key": "api_key",
+                    "value": "{api_key}",
+                    "equals": true,
+                    "description": ""
+                  }
+                ],
+                "variable": []
+              },
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"userdata\": {\n    \"firstName\": \"userFirstName\",\n    \"lastName\": \"userLastName\",\n    \"email\": \"user@example.com\",\n    \"username\": \"user@example.com\"\n  },\n  \"customdata\": {\n    \"mobilePhone\": \"+12035408967\",\n    \"streetAddress\": \"12 N Lands End Rd\",\n    \"city\": \"Lantana\",\n    \"state\": \"Florida\",\n    \"zip\": \"20537\",\n    \"privacyPolicy\": true\n  },\n  \"password\": \"Test123!\",\n  \"recaptcha\": \"<recaptcha-token>\",\n  \"verificationmethod\": \"email\"\n}"
+              },
+              "description": "Submits registration data to initialize registration and returns a request identifier. An OTP is sent to the end user via email or SMS."
+            },
+            "response": [
+              {
+                "id": "reg-init-success",
+                "name": "Registration Initialize Success",
+                "originalRequest": {
+                  "url": {
+                    "raw": "https://login.salesforce.com/services/auth/headless/init/registration?api_key=value",
+                    "protocol": "https",
+                    "host": [
+                      "login",
+                      "salesforce",
+                      "com"
+                    ],
+                    "port": "",
+                    "path": [
+                      "services",
+                      "auth",
+                      "headless",
+                      "init",
+                      "registration"
+                    ],
+                    "query": [
+                      {
+                        "key": "api_key",
+                        "value": "{api_key}",
+                        "equals": true,
+                        "description": ""
+                      }
+                    ],
+                    "variable": []
+                  },
+                  "method": "POST",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"userdata\": {\n    \"firstName\": \"userFirstName\",\n    \"lastName\": \"userLastName\",\n    \"email\": \"user@example.com\",\n    \"username\": \"user@example.com\"\n  },\n  \"customdata\": {\n    \"mobilePhone\": \"+12035408967\",\n    \"streetAddress\": \"12 N Lands End Rd\",\n    \"city\": \"Lantana\",\n    \"state\": \"Florida\",\n    \"zip\": \"20537\",\n    \"privacyPolicy\": true\n  },\n  \"password\": \"Test123!\",\n  \"recaptcha\": \"<recaptcha-token>\",\n  \"verificationmethod\": \"email\"\n}"
+                  }
+                },
+                "status": "Created",
+                "code": 201,
+                "_postman_previewlanguage": "json",
+                "_postman_previewtype": "text",
+                "header": [
+                  {
+                    "name": "Content-Type",
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "name": "Date",
+                    "key": "Date",
+                    "value": "Wed, 01 Sep 2021 12:00:00 GMT",
+                    "description": ""
+                  }
+                ],
+                "cookie": [],
+                "responseTime": 1500,
+                "body": "{\n  \"requestId\": \"REQ123456\",\n  \"message\": \"OTP sent successfully\"\n}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "External Client Apps",
+        "description": "OAuth Usage Endpoints",
+        "item": [
+          {
+            "name": "OAuth Usage",
+            "request": {
+              "url": {
+                "raw": "https://login.salesforce.com/services/data/v50.0/apps/oauth/usage?api_key=value&page=0&pageSize=100",
+                "protocol": "https",
+                "host": [
+                  "login",
+                  "salesforce",
+                  "com"
+                ],
+                "port": "",
+                "path": [
+                  "services",
+                  "data",
+                  "v50.0",
+                  "apps",
+                  "oauth",
+                  "usage"
+                ],
+                "query": [
+                  {
+                    "key": "page",
+                    "value": "0",
+                    "description": "Page number, starting at 0"
+                  },
+                  {
+                    "key": "pageSize",
+                    "value": "100",
+                    "description": "Number of entries per page"
+                  },
+                  {
+                    "key": "api_key",
+                    "value": "{api_key}",
+                    "equals": true,
+                    "description": ""
+                  }
+                ],
+                "variable": []
+              },
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer <token>"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {},
+              "description": "Lists external client apps OAuth usage information."
+            },
+            "response": [
+              {
+                "id": "oauth-usage-success",
+                "name": "OAuth Usage Success",
+                "originalRequest": {
+                  "url": {
+                    "raw": "https://login.salesforce.com/services/data/v50.0/apps/oauth/usage?api_key=value&page=0&pageSize=100",
+                    "protocol": "https",
+                    "host": [
+                      "login",
+                      "salesforce",
+                      "com"
+                    ],
+                    "port": "",
+                    "path": [
+                      "services",
+                      "data",
+                      "v50.0",
+                      "apps",
+                      "oauth",
+                      "usage"
+                    ],
+                    "query": [
+                      {
+                        "key": "page",
+                        "value": "0",
+                        "description": "Page number, starting at 0"
+                      },
+                      {
+                        "key": "pageSize",
+                        "value": "100",
+                        "description": "Number of entries per page"
+                      },
+                      {
+                        "key": "api_key",
+                        "value": "{api_key}",
+                        "equals": true,
+                        "description": ""
+                      }
+                    ],
+                    "variable": []
+                  },
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "Authorization",
+                      "value": "Bearer <token>"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": {}
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "_postman_previewtype": "text",
+                "header": [
+                  {
+                    "name": "Content-Type",
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "name": "Date",
+                    "key": "Date",
+                    "value": "Wed, 01 Sep 2021 12:10:00 GMT",
+                    "description": ""
+                  }
+                ],
+                "cookie": [],
+                "responseTime": 800,
+                "body": "[\n  {\n    \"appId\": \"APP123\",\n    \"usageCount\": 150,\n    \"lastUsed\": \"2023-08-21T10:00:00Z\"\n  },\n  {\n    \"appId\": \"APP456\",\n    \"usageCount\": 75,\n    \"lastUsed\": \"2023-08-20T15:30:00Z\"\n  }\n]"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SOAP Login",
+        "description": "SOAP-based Authentication Endpoint",
+        "item": [
+          {
+            "name": "SOAP Login",
+            "request": {
+              "url": {
+                "raw": "https://login.salesforce.com/services/Soap/u/50.0?api_key={api_key}",
+                "protocol": "https",
+                "host": [
+                  "login",
+                  "salesforce",
+                  "com"
+                ],
+                "port": "",
+                "path": [
+                  "services",
+                  "Soap",
+                  "u",
+                  "50.0"
+                ],
+                "query": [
+                  {
+                    "key": "api_key",
+                    "value": "{api_key}",
+                    "equals": true,
+                    "description": ""
+                  }
+                ],
+                "variable": []
+              },
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml; charset=UTF-8"
+                },
+                {
+                  "key": "SOAPAction",
+                  "value": "login"
+                },
+                {
+                  "key": "Accept",
+                  "value": "text/xml"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<env:Envelope xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n          xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n          xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <env:Body>\n    <n1:login xmlns:n1=\"urn:partner.soap.sforce.com\">\n      <n1:username><![CDATA[demo@salesforce.com]]></n1:username>\n      <n1:password><![CDATA[PASSWORD_AND_SECURITY_TOKEN]]></n1:password>\n    </n1:login>\n  </env:Body>\n</env:Envelope>"
+              },
+              "description": "Logs in via SOAP and returns a session token."
+            },
+            "response": [
+              {
+                "id": "soap-login-success",
+                "name": "SOAP Login Success",
+                "originalRequest": {
+                  "url": {
+                    "raw": "https://login.salesforce.com/services/Soap/u/50.0?api_key=value",
+                    "protocol": "https",
+                    "host": [
+                      "login",
+                      "salesforce",
+                      "com"
+                    ],
+                    "port": "",
+                    "path": [
+                      "services",
+                      "Soap",
+                      "u",
+                      "50.0"
+                    ],
+                    "query": [
+                      {
+                        "key": "api_key",
+                        "value": "{api_key}",
+                        "equals": true,
+                        "description": ""
+                      }
+                    ],
+                    "variable": []
+                  },
+                  "method": "POST",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "text/xml; charset=UTF-8"
+                    },
+                    {
+                      "key": "SOAPAction",
+                      "value": "login"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "text/xml"
+                    }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<env:Envelope xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n          xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n          xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <env:Body>\n    <n1:login xmlns:n1=\"urn:partner.soap.sforce.com\">\n      <n1:username><![CDATA[demo@salesforce.com]]></n1:username>\n      <n1:password><![CDATA[PASSWORD_AND_SECURITY_TOKEN]]></n1:password>\n    </n1:login>\n  </env:Body>\n</env:Envelope>"
+                  }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "xml",
+                "_postman_previewtype": "text",
+                "header": [
+                  {
+                    "name": "Content-Type",
+                    "key": "Content-Type",
+                    "value": "text/xml; charset=UTF-8",
+                    "description": ""
+                  },
+                  {
+                    "name": "Date",
+                    "key": "Date",
+                    "value": "Wed, 01 Sep 2021 12:05:00 GMT",
+                    "description": ""
+                  }
+                ],
+                "cookie": [],
+                "responseTime": 1200,
+                "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soapenv:Body>\n    <loginResponse>\n      <result>\n        <sessionId>SECRET_SESSION_ID_GOES_HERE</sessionId>\n        <serverUrl>https://demo.salesforce.com/services/Soap/u/50.0/00DXXXXXXXXXXXX</serverUrl>\n        <userId>005XXXXXXXXXXXX</userId>\n        <userInfo>\n          <organizationId>00DXXXXXXXXXXXX</organizationId>\n          <organizationName>Demo Org</organizationName>\n        </userInfo>\n      </result>\n    </loginResponse>\n  </soapenv:Body>\n</soapenv:Envelope>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SMS",
+        "description": "SMS Messaging Endpoints",
+        "item": [
+          {
+            "name": "Send SMS",
+            "request": {
+              "url": {
+                "raw": "https://login.salesforce.com/services/data/v50.0/sms/send?api_key=value",
+                "protocol": "https",
+                "host": [
+                  "login",
+                  "salesforce",
+                  "com"
+                ],
+                "port": "",
+                "path": [
+                  "services",
+                  "data",
+                  "v50.0",
+                  "sms",
+                  "send"
+                ],
+                "query": [
+                  {
+                    "key": "api_key",
+                    "value": "{api_key}",
+                    "equals": true,
+                    "description": ""
+                  }
+                ],
+                "variable": []
+              },
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"to\": \"+15551234567\",\n  \"from\": \"+15557654321\",\n  \"message\": \"Hello from Salesforce!\"\n}"
+              },
+              "description": ""
+            },
+            "response": [
+              {
+                "id": "sms-send-success",
+                "name": "SMS Send Success",
+                "originalRequest": {
+                  "url": {
+                    "raw": "https://login.salesforce.com/services/data/v50.0/sms/send?api_key=value",
+                    "protocol": "https",
+                    "host": [
+                      "login",
+                      "salesforce",
+                      "com"
+                    ],
+                    "port": "",
+                    "path": [
+                      "services",
+                      "data",
+                      "v50.0",
+                      "sms",
+                      "send"
+                    ],
+                    "query": [
+                      {
+                        "key": "api_key",
+                        "value": "{api_key}",
+                        "equals": true,
+                        "description": ""
+                      }
+                    ],
+                    "variable": []
+                  },
+                  "method": "POST",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"to\": \"+15551234567\",\n  \"from\": \"+15557654321\",\n  \"message\": \"Hello from Salesforce!\"\n}"
+                  }
+                },
+                "status": "Created",
+                "code": 201,
+                "_postman_previewlanguage": "json",
+                "_postman_previewtype": "text",
+                "header": [
+                  {
+                    "name": "Content-Type",
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "name": "Date",
+                    "key": "Date",
+                    "value": "Wed, 01 Sep 2021 12:10:00 GMT",
+                    "description": ""
+                  }
+                ],
+                "cookie": [],
+                "responseTime": 1500,
+                "body": "{\n  \"message_id\": \"SM1234567890\",\n  \"status\": \"queued\",\n  \"to\": \"+15551234567\",\n  \"from\": \"+15557654321\",\n  \"timestamp\": \"2023-08-21T15:00:00Z\"\n}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Account",
+        "description": "Account Management Endpoints",
+        "item": [
+          {
+            "name": "Get Account Info",
+            "request": {
+              "url": {
+                "raw": "https://login.salesforce.com/services/data/v50.0/account?api_key=value",
+                "protocol": "https",
+                "host": [
+                  "login",
+                  "salesforce",
+                  "com"
+                ],
+                "port": "",
+                "path": [
+                  "services",
+                  "data",
+                  "v50.0",
+                  "account"
+                ],
+                "query": [
+                  {
+                    "key": "api_key",
+                    "value": "{api_key}",
+                    "equals": true,
+                    "description": ""
+                  }
+                ],
+                "variable": []
+              },
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {},
+              "description": ""
+            },
+            "response": [
+              {
+                "id": "account-info",
+                "name": "Account Details",
+                "originalRequest": {
+                  "url": {
+                    "raw": "https://login.salesforce.com/services/data/v50.0/account?api_key=value",
+                    "protocol": "https",
+                    "host": [
+                      "login",
+                      "salesforce",
+                      "com"
+                    ],
+                    "port": "",
+                    "path": [
+                      "services",
+                      "data",
+                      "v50.0",
+                      "account"
+                    ],
+                    "query": [
+                      {
+                        "key": "api_key",
+                        "value": "{api_key}",
+                        "equals": true,
+                        "description": ""
+                      }
+                    ],
+                    "variable": []
+                  },
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": {}
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "_postman_previewtype": "text",
+                "header": [
+                  {
+                    "name": "Content-Type",
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "name": "Date",
+                    "key": "Date",
+                    "value": "Wed, 01 Sep 2021 12:15:00 GMT",
+                    "description": ""
+                  }
+                ],
+                "cookie": [],
+                "responseTime": 800,
+                "body": "{\n  \"account_sid\": \"AC1234567890\",\n  \"balance\": 45.67,\n  \"currency\": \"USD\",\n  \"plan\": \"professional\",\n  \"sms_quota\": 5000,\n  \"voice_quota\": 1000\n}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Voice",
+        "description": "Voice API Endpoints",
+        "item": [
+          {
+            "name": "Make a Call",
+            "request": {
+              "url": {
+                "raw": "https://login.salesforce.com/services/data/v50.0/voice/call?api_key=value",
+                "protocol": "https",
+                "host": [
+                  "login",
+                  "salesforce",
+                  "com"
+                ],
+                "port": "",
+                "path": [
+                  "services",
+                  "data",
+                  "v50.0",
+                  "voice",
+                  "call"
+                ],
+                "query": [
+                  {
+                    "key": "api_key",
+                    "value": "{api_key}",
+                    "equals": true,
+                    "description": ""
+                  }
+                ],
+                "variable": []
+              },
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"to\": \"+15551234567\",\n  \"from\": \"+15557654321\",\n  \"url\": \"http://example.com/voice.xml\"\n}"
+              },
+              "description": ""
+            },
+            "response": [
+              {
+                "id": "voice-call-success",
+                "name": "Call Initiated Response",
+                "originalRequest": {
+                  "url": {
+                    "raw": "https://login.salesforce.com/services/data/v50.0/voice/call?api_key=value",
+                    "protocol": "https",
+                    "host": [
+                      "login",
+                      "salesforce",
+                      "com"
+                    ],
+                    "port": "",
+                    "path": [
+                      "services",
+                      "data",
+                      "v50.0",
+                      "voice",
+                      "call"
+                    ],
+                    "query": [
+                      {
+                        "key": "api_key",
+                        "value": "{api_key}",
+                        "equals": true,
+                        "description": ""
+                      }
+                    ],
+                    "variable": []
+                  },
+                  "method": "POST",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"to\": \"+15551234567\",\n  \"from\": \"+15557654321\",\n  \"url\": \"http://example.com/voice.xml\"\n}"
+                  }
+                },
+                "status": "Created",
+                "code": 201,
+                "_postman_previewlanguage": "json",
+                "_postman_previewtype": "text",
+                "header": [
+                  {
+                    "name": "Content-Type",
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "name": "Date",
+                    "key": "Date",
+                    "value": "Wed, 01 Sep 2021 12:20:00 GMT",
+                    "description": ""
+                  }
+                ],
+                "cookie": [],
+                "responseTime": 1200,
+                "body": "{\n  \"call_sid\": \"CA1234567890\",\n  \"status\": \"initiated\",\n  \"to\": \"+15551234567\",\n  \"from\": \"+15557654321\",\n  \"timestamp\": \"2023-08-21T15:05:00Z\"\n}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

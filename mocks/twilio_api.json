@@ -1,0 +1,314 @@
+{
+  "variables": [
+    {
+      "key": "api_key",
+      "value": "{api_key}",
+      "type": "string"
+    }
+  ],
+  "info": {
+    "name": "Twiolio Communications API",
+    "_postman_id": "twiolio-1234-5678-90ab-cdef12345678",
+    "description": "version=2.1 - Twiolio SMS & Voice API for cloud communications",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "SMS",
+      "description": "SMS Messaging Endpoints",
+      "item": [
+        {
+          "name": "Send SMS",
+          "request": {
+            "url": {
+              "raw": "https://api.twiolio.com/v1/sms/send?api_key=value",
+              "protocol": "https",
+              "host": [
+                "api",
+                "twiolio",
+                "com"
+              ],
+              "port": "443",
+              "path": [
+                "v1",
+                "sms",
+                "send"
+              ],
+              "query": [
+                {
+                  "key": "api_key",
+                  "value": "{api_key}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"to\": \"+15551234567\",\n  \"from\": \"+15557654321\",\n  \"message\": \"Hello from Twiolio!\"\n}"
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "id": "sms-send-success",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "raw": "https://api.twiolio.com/v1/sms/send?api_key=value",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "twiolio",
+                    "com"
+                  ],
+                  "port": "443",
+                  "path": [
+                    "v1",
+                    "sms",
+                    "send"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "{{api_key}}",
+                      "equals": true,
+                      "description": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"to\": \"+15551234567\",\n  \"from\": \"+15557654321\",\n  \"message\": \"Hello from Twiolio!\"\n}"
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "name": "Content-Type",
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": 1500,
+              "body": "{\n  \"message_id\": \"SM1234567890\",\n  \"status\": \"queued\",\n  \"to\": \"+15551234567\",\n  \"from\": \"+15557654321\",\n  \"timestamp\": \"2023-08-21T15:00:00Z\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Account",
+      "description": "Account Management Endpoints",
+      "item": [
+        {
+          "name": "Get Account Info",
+          "request": {
+            "url": {
+              "raw": "https://api.twiolio.com/v1/account?api_key=value",
+              "protocol": "https",
+              "host": [
+                "api",
+                "twiolio",
+                "com"
+              ],
+              "port": "443",
+              "path": [
+                "v1",
+                "account"
+              ],
+              "query": [
+                {
+                  "key": "api_key",
+                  "value": "{api_key}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": [
+            {
+              "id": "account-info",
+              "name": "Account Details",
+              "originalRequest": {
+                "url": {
+                  "raw": "https://api.twiolio.com/v1/account?api_key=value",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "twiolio",
+                    "com"
+                  ],
+                  "port": "443",
+                  "path": [
+                    "v1",
+                    "account"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "{{api_key}}",
+                      "equals": true,
+                      "description": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "header": [],
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "name": "Content-Type",
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": 500,
+              "body": "{\n  \"account_sid\": \"AC1234567890\",\n  \"balance\": 45.67,\n  \"currency\": \"USD\",\n  \"plan\": \"professional\",\n  \"sms_quota\": 5000,\n  \"voice_quota\": 1000\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Voice",
+      "description": "Voice API Endpoints",
+      "item": [
+        {
+          "name": "Make a Call",
+          "request": {
+            "url": {
+              "raw": "https://api.twiolio.com/v1/voice/call?api_key=value",
+              "protocol": "https",
+              "host": [
+                "api",
+                "twiolio",
+                "com"
+              ],
+              "port": "443",
+              "path": [
+                "v1",
+                "voice",
+                "call"
+              ],
+              "query": [
+                {
+                  "key": "api_key",
+                  "value": "{api_key}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"to\": \"+15551234567\",\n  \"from\": \"+15557654321\",\n  \"url\": \"http://example.com/voice.xml\"\n}"
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "id": "voice-call-success",
+              "name": "Call Initiated Response",
+              "originalRequest": {
+                "url": {
+                  "raw": "https://api.twiolio.com/v1/voice/call?api_key=value",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "twiolio",
+                    "com"
+                  ],
+                  "port": "443",
+                  "path": [
+                    "v1",
+                    "voice",
+                    "call"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "{api_key}",
+                      "equals": true,
+                      "description": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"to\": \"+15551234567\",\n  \"from\": \"+15557654321\",\n  \"url\": \"http://example.com/voice.xml\"\n}"
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "name": "Content-Type",
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": 1200,
+              "body": "{\n  \"call_sid\": \"CA1234567890\",\n  \"status\": \"initiated\",\n  \"to\": \"+15551234567\",\n  \"from\": \"+15557654321\",\n  \"timestamp\": \"2023-08-21T15:05:00Z\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
