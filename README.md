@@ -12,23 +12,27 @@ Our artifact imported into Microcks allows you to access comprehensive, real-wor
 
 Once you've got your Microcks instance up-and-running, import .json file of salesforce and twilio API from importers
 
-<img width="1439" alt="Screenshot 2025-02-11 at 6 22 31 PM" src="https://github.com/user-attachments/assets/c8fcb46a-a0e5-4ec0-b7d8-834f87348f83" />
+<img width="1439" alt="Screenshot 2025-02-11 at 6 22 31 PM" src="https://github.com/user-attachments/assets/0f25e875-60b5-4863-93dc-2a15303312e2" />
 
 
-```
-```
+URL:```https://github.com/vickybesra/microcks_mocks/blob/main/mocks/twilio_api.json```
+URL:```https://github.com/vickybesra/microcks_mocks/blob/main/mocks/salesforce_api.json```
 
 #### Overview
 Once imported into Microcks, you should have the following results with `Mocks URLs` ready to use! 🚀 
 
-<img width="1439" alt="Screenshot 2025-02-11 at 6 23 44 PM" src="https://github.com/user-attachments/assets/1372a8cb-69c3-4e8f-877f-4302e5a12dfd" />
-<img width="1439" alt="Screenshot 2025-02-11 at 6 24 28 PM" src="https://github.com/user-attachments/assets/3a664c8b-3038-403d-89db-765d039ebb65" />
+<img width="1439" alt="Screenshot 2025-02-11 at 6 23 44 PM" src="https://github.com/user-attachments/assets/6ade758b-07fe-4663-b510-ce5af7270b4a" />
+
+<img width="1439" alt="Screenshot 2025-02-11 at 6 24 28 PM" src="https://github.com/user-attachments/assets/ac4e1fa1-aba1-4806-af8c-96f9b1e709a1" />
+
 
 
 
 Now, hit the url endpoint to get the response
 
-<img width="1440" alt="Screenshot 2025-02-11 at 6 26 16 PM" src="https://github.com/user-attachments/assets/94532442-2e38-478f-915a-5a2ea527aa37" />
+<img width="1253" alt="Screenshot 2025-02-11 at 6 25 46 PM" src="https://github.com/user-attachments/assets/2e6659e3-1ba6-485c-969c-a16472ee87de" />
 
-<img width="1253" alt="Screenshot 2025-02-11 at 6 25 46 PM" src="https://github.com/user-attachments/assets/271b612e-d7c0-4996-a129-adea7aa30e74" />
+
+<img width="1440" alt="Screenshot 2025-02-11 at 6 26 16 PM" src="https://github.com/user-attachments/assets/485092c6-0d1f-45a5-99fe-076ba23d248f" />
+
 
