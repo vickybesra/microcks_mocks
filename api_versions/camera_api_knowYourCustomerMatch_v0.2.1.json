@@ -1,0 +1,112 @@
+{
+  "variables": [
+    {
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "type": "string"
+    }
+  ],
+  "info": {
+    "name": "Camara KnowYourCustomer Match API",
+    "_postman_id": "camara-1234-5678-90ab-cdef12345678",
+    "description": "version=0.2.1 - KnowYourCustomer Match API for verifying customer identity matching against operator records.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "KYC Match",
+      "description": "Endpoints for verifying matching of customer data.",
+      "item": [
+        {
+          "name": "Verify Customer Data",
+          "request": {
+            "url": {
+              "raw": "https://api.camara.io/v1/kyc/match?api_key=value",
+              "protocol": "https",
+              "host": [
+                "api",
+                "camara",
+                "io"
+              ],
+              "path": [
+                "v1",
+                "kyc",
+                "match"
+              ],
+              "query": [
+                {
+                  "key": "api_key",
+                  "value": "{{api_key}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "description": "Endpoint to verify the matching of customer attributes with operator KYC records."
+          },
+          "response": [
+            {
+              "id": "verify-customer-success",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "raw": "https://api.camara.io/v1/kyc/match?api_key=value",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "camara",
+                    "io"
+                  ],
+                  "path": [
+                    "v1",
+                    "kyc",
+                    "match"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "{{api_key}}",
+                      "equals": true,
+                      "description": ""
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "name": "Content-Type",
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": 500,
+              "body": "{\n  \"match\": true,\n  \"details\": {\n    \"customerId\": \"12345\",\n    \"verifiedAttributes\": [\"name\", \"phone\", \"address\"]\n  }\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
