@@ -37,7 +37,16 @@ Once imported into Microcks, you should have the following results with `Mocks U
 
 
 <h2>New Salesforces mock API package:</h2>
-![](image.png)
+
+<img width="1440" alt="Screenshot 2025-02-15 at 12 23 31 AM" src="https://github.com/user-attachments/assets/f3cb56ee-865e-4953-a578-7b9fc8b1e60d" />
+
+
+
+https://github.com/user-attachments/assets/868d44f4-dbfd-4be3-b33b-008691f4e691
+
+
+
+
 
 
 <h2>Updated the version of industry APIs from 0.1.0-rc(current) to 0.2.1:</h2>
