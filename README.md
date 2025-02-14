@@ -28,7 +28,7 @@ Once imported into Microcks, you should have the following results with `Mocks U
 
 
 
-Now, hit the url endpoint to get the response:
+<h2>Now, hit the url endpoint to get the response:</h2>
 
 <img width="1253" alt="Screenshot 2025-02-11 at 6 25 46 PM" src="https://github.com/user-attachments/assets/2e6659e3-1ba6-485c-969c-a16472ee87de" />
 
@@ -36,11 +36,11 @@ Now, hit the url endpoint to get the response:
 <img width="1440" alt="Screenshot 2025-02-11 at 6 26 16 PM" src="https://github.com/user-attachments/assets/485092c6-0d1f-45a5-99fe-076ba23d248f" />
 
 
-New Salesforces mock API package:
+<h2>New Salesforces mock API package:</h2>
 ![](image.png)
 
 
-Updated the version of industry APIs from 0.1.0-rc(current) to 0.2.1:
+<h2>Updated the version of industry APIs from 0.1.0-rc(current) to 0.2.1:</h2>
 
 https://github.com/user-attachments/assets/9282bd62-aad1-404a-8ce0-7444642e0ea7
 
