@@ -49,7 +49,7 @@ https://github.com/user-attachments/assets/868d44f4-dbfd-4be3-b33b-008691f4e691
 
 
 
-<h2>Updated the version of industry APIs from 0.1.0-rc(current) to 0.2.1:</h2>
+<h2>Added latest version for camera APIs of version 0.2.1:</h2>
 
 https://github.com/user-attachments/assets/9282bd62-aad1-404a-8ce0-7444642e0ea7
 
